@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <form #frmRegister="ngForm">
+        <h1>User Register</h1>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" name="UserName" ngModel #UserName="ngModel" required minlength="4" maxlength="10">
+            </dd>
+            <dd class="text-danger" *ngIf="(frmRegister.submitted && UserName.invalid) || (UserName.invalid && UserName.touched)">
+                <div *ngIf="UserName.errors?.['required']">User Name Required</div>
+                <div *ngIf="UserName.errors?.['minlength']">UserName min 4 char required</div>
+                <div *ngIf="UserName.errors?.['maxlength']">UserName max 12 char only</div>
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" name="Age" ngModel #Age="ngModel" required min="23" max="45">
+            </dd>
+            <dd class="text-danger" *ngIf="(frmRegister.submitted && Age.invalid) || (Age.touched && Age.invalid)">
+                <div *ngIf="Age.errors?.['required']">Age Required</div>
+                <div *ngIf="Age.errors?.['min']">Age min 23</div>
+                <div *ngIf="Age.errors?.['max']">Age max 45</div>
+            </dd>
+            <dt>Select City</dt>
+            <dd>
+                <select (change)="ChangeCity($event)">
+                    <option value="-1">Select your City</option>
+                    <option value="hyd">Hyd</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="banglore">Banglore</option>
+                </select>
+            </dd>
+            <dd class="text-danger" *ngIf="frmRegister.submitted">
+                <div>{{CityError}}</div>
+            </dd>
+        </dl>
+        <div>
+            <button>Register</button>
+        </div>
+    </form>
+    <hr>
+    <div>
+        <h1>User Details</h1>
+        <dl>
+            <dt>User Name</dt>
+            <dd>{{UserName.value}}</dd>
+            <dt>Age</dt>
+            <dd>{{Age.value}}</dd>
+        </dl>
+    </div>
+    <hr>
+    <div>
+        <h4>Pristine --{{frmRegister.pristine}}</h4>
+        <h4>Dirty --{{frmRegister.dirty}}</h4>
+        <h4>Valid --{{frmRegister.valid}}</h4>
+        <h4>invalid --{{frmRegister.invalid}}</h4>
+        <h4>Submitted --{{frmRegister.submitted}}</h4>
+        <h4>Touched --{{frmRegister.touched}}</h4>
+        <h4>UnTouched --{{frmRegister.untouched}}</h4>
+    </div>
+</div>
