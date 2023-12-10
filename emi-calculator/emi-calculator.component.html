@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <h1 class="text-center">Personal Loan EMI Calculator</h1>
+    <div class="m-5 border p-5">
+        <div class="row">
+            <div class="col">
+             Amount you need <span class="bi bi-currency-rupee border border-2 p-2 rounded rounded-2">{{principle}}</span>
+            </div>
+            <div class="col">
+                for <span class="border border-2 p-2 rounded rounded-2">{{time}}</span> years
+            </div>
+            <div class="col">
+                Interest rate <span class="border border-2 p-2 rounded rounded-2">{{rate}}</span> %
+            </div>
+         </div>
+         <div class="row mt-4">
+             <div class="col">
+              &#8377;100000 <input type="range" (change)="AmountChange($event)" class="form-range w-25" min="100000" max="1000000" step="50000" value="100000">&#8377;1000000
+             </div>
+             <div class="col">
+                1 <input type="range" min="1" max="5" step="1" value="1" class="form-range w-25" (change)="TimeChange($event)"> 5
+             </div>
+             <div class="col">
+                10.5 <input type="range" (change)="InterestChange($event)" class="form-range w-25" min="10.5" max="20.5" step="0.5" value="10.5">20.5
+             </div>
+          </div>
+          <div class="row">
+              <div class="col text-end">
+                 <button (click)="CalculateTotal()" class="btn btn-primary">Calculate</button> 
+              </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <h1>Your Monthly EMI will be <span class="text-info">{{Emi | currency:'INR'}}</span> for {{time}} years</h1>
+        </div>
+    </div>
+</div>
