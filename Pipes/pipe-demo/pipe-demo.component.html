@@ -1,0 +1,65 @@
+<div class="container-fluid">
+     <h1 class="text-center mt-2 border bg-danger p-3 m-2 position-sticky">{{title | sentence |slice:0:8}}</h1>
+     <div class="mt-3">
+          <div class="form-floating input-group mb-2" style="width: 250px;">
+               <input type="text" placeholder="Enter Message" [(ngModel)]="message" class="form-control">
+               <button (click)="SendMsg()" class="btn btn-primary input-group-text">
+                    <span class="bi bi-send-fill"></span>
+               </button>
+               <label>Enter Message</label>
+          </div>
+        <h1>Notificatons</h1>
+          <button (click)="ShowMsgs()" class="btn btn-primary position-relative">
+              {{Messages.length | i18nPlural:map}}
+               <span class="bi bi-bell-fill "></span>
+               <span class="bi badge rounded-circle position-absolute bg-danger">{{Count}}</span>
+          </button>
+          <div *ngIf="ShowMessages" class="mt-4">
+              <h2>Your Messages</h2>
+              <ul>
+                 <li *ngFor="let msg of Messages" class="mb-1 text-center border bg-primary text-white rounded rounded-4 p-2" style="width: 240px;">
+                    <span>{{msg}}</span>
+                 </li>
+              </ul>
+          </div>
+     </div>
+    <div class="mt-5">
+        <h1>Product Details</h1>
+        <table class="table table-hover table-responsive border-info">
+             <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Rate</th>
+                      <th>Mfd</th>
+                      <th>Price</th>
+                      <th>Shipped To</th>
+                      <th>Status of Product</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr *ngFor="let item of Product">
+                       <td><span class="bi bi-tag-fill"></span> {{item.Name | uppercase | slice:0:9}}</td>
+                       <td><span class="bi bi-star-fill text-warning"></span> {{item.Rate | number:'0.1'}}</td>
+                       <td><span class="bi bi-calendar-date"></span> {{item.Mfd | date:'fullDate':'yyyy-MMMM-dd'}}</td>
+                       <td><span class="bi bi-currency-rupee"></span> {{item.Price | number:'0.3'}}</td>
+                       <td><span class="bi bi-truck"></span> {{item.ShippedTo | titlecase}}</td>
+                       <td><span class="bi bi-hourglass-split"></span> {{item.ShippedTo | i18nSelect:Status}}</td>
+                  </tr>
+             </tbody>
+        </table>
+        <div class="mt-3">
+             <h2>KeyValue</h2>
+             <div *ngFor="let item of products | keyvalue">
+                 {{item.key}} - {{item.value}}
+             </div>
+        </div>
+        <div class="mt-3">
+             <h2>Private Details</h2>
+             {{Product|json}}
+        </div>
+    </div>
+    <h1>cities</h1>
+    <div *ngFor="let city of cities |sorting" class="mt-2">
+        {{city}}
+    </div>
+</div>
