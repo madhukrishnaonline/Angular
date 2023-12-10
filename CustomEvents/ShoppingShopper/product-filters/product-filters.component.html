@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="border border-1 shadow mt-2 p-3">
+       <h2>Filter Products</h2>
+      <ul class="list-unstyled mt-3">
+        <li class="d-flex justify-content-between  mb-2">
+            <span><input type="radio" (change)="CategoryChanged($event)" name="category" class="form-check-input" value="All"> <span> All</span> </span> <span class="badge bg-info">{{AllCount}}</span>
+        </li>
+        <li class="d-flex justify-content-between  mb-2">
+            <span><input type="radio" (change)="CategoryChanged($event)" name="category" class="form-check-input" value="electronics"> <span> Electronics</span></span><span class="badge bg-info">{{Electronics}}</span>
+        </li>
+        <li class="d-flex justify-content-between  mb-2">
+            <span><input type="radio" (change)="CategoryChanged($event)" name="category" class="form-check-input" value="jewelery"> <span> Jewelery</span></span><span class="badge bg-info">{{Jewelery}}</span>
+        </li>
+        <li class="d-flex justify-content-between  mb-2">
+            <span><input type="radio" (change)="CategoryChanged($event)" name="category" class="form-check-input" value="men's clothing"> <span> Men's Clothing</span></span><span class="badge bg-info">{{MensClothing}}</span>
+        </li>
+        <li class="d-flex justify-content-between  mb-2">
+            <span><input type="radio" (change)="CategoryChanged($event)" name="category" class="form-check-input" value="women's clothing"> <span> Women's Clothing</span></span><span class="badge bg-info">{{WomensClothing}}</span>
+        </li>
+      </ul>
+    </div>
+</div>

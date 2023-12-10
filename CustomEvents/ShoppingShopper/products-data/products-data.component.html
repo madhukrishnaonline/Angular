@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <header class="bg-dark p-2 m-2 text-white">
+        <h1 class="text-center">Shopper.</h1>
+    </header>
+    <section>
+        <div class="row">
+            <div class="col-3">
+                <nav>
+                  <app-product-filters [AllCount]="All" [Electronics]="Electronics" [Jewelery]="Jewelery" [MensClothing]="MensClothing" [WomensClothing]="WomensClothing" (ChangeProducts)="ProductChanged($event)"></app-product-filters> 
+                </nav> 
+            </div>
+            <div class="col-9">
+                <main class="d-flex flex-wrap overflow-auto" style="height: 700px;">
+                     <div *ngFor="let item of Products" class="card p-2 m-2 border-info shadow" style="width: 250px; height: 470px;">
+                         <div class="card-img-top text-center">
+                             <a [href]="item.image" target="_blank">
+                                <img [src]="item.image" width="200px" height="250px">
+                             </a>
+                         </div>
+                         <div class="card-header" style="height: 150px;">
+                             {{item.title}}
+                         </div>
+                         <div class="card-footer d-grid">
+                             <button class="btn btn-danger">Buy Now</button>
+                         </div>
+                     </div>
+                </main>
+            </div>
+        </div>
+    </section>
+</div>
