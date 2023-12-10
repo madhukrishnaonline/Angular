@@ -1,0 +1,54 @@
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-3 m-3">
+         <h2 class="text-primary">Product Details</h2>
+            <dl>
+               <dt>Title</dt>
+               <dd>{{Product.title}}</dd>
+               <dt>click to view Description</dt>
+               <dd class="form-switch">
+                 <input type="checkbox" class="form-check-input" ngModel #toggleDescription="">
+                </dd>
+               <dt>Price</dt>
+               <dd> <span class="bi bi-currency-dollar"></span>{{Product.price}}</dd>
+               <dt>Preview</dt>
+               <dd>
+                  <figure>
+                     <h3><figcaption class="bi bi-tag-fill"></figcaption></h3>
+                     <a [href]="Product.image" target="_blank">
+                         <img [src]="Product.image" width="200px" height="200px">
+                     </a>
+                  </figure>
+               </dd>
+               <dt>Rating</dt>
+               <dd><span class="bi bi-star-fill text-warning"></span> {{Product.rating.rate}} [{{Product.rating.count}}]</dd>
+            </dl>
+            <div>
+               <button class="btn btn-danger me-3" (click)="PreviousClick()">
+                  <span class="bi bi-chevron-left"></span>
+               </button>
+               <button class="btn btn-danger" (click)="NextClick()">
+                 <span class="bi bi-chevron-right"></span>
+              </button>
+            </div>
+        </div>
+        <div class="col-4">
+           <div *ngIf="toggleDescription.value then details else alternate"></div>
+           <div class="description">
+              <ng-template #details>
+                 <div style="border: 1 solid gray; width: 200px; height: 200px; margin-top: 250px;">
+                     <textarea cols="30" rows="05"  disabled> 
+                        {{Product.description}}
+                     </textarea>
+                 </div>
+              </ng-template>
+              <ng-template #alternate>
+                  <div style="border: 1 solid gray; width: 200px; height: 200px; margin-top: 250px;">
+                     <i>Description here</i>
+                  </div>
+              </ng-template>
+           </div>
+        </div>
+   </div>
+</div>
+<!-- *ngIf="toggleDescription.value" -->
