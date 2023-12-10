@@ -1,0 +1,29 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 400px;">
+    <div>
+    <h2 class="text-center">Class Binding</h2>
+        <div class="form-switch">
+            <input type="checkbox" name="theme" ngModel #darkTheme="ngModel" class="form-check-input"> DarkTheme
+        </div>
+        <div class="form-switch">
+            <input type="checkbox" name="theme" ngModel #dangerTheme="ngModel" class="form-check-input"> RedTheme
+        </div>
+        <form class="border border-2 p-3 rounded rounded-2" [ngClass]="{'bg-danger':dangerTheme.value,'text-white':dangerTheme.value}" [ngClass]="{'bg-dark':darkTheme.value,'text-white':darkTheme.value}">
+            <div>
+                <span class="bi bi-person-fill"></span> User Login
+            </div>
+            <dl>
+               <dt class="form-check-label">UserName</dt>
+               <dd>
+                  <input type="text" [ngClass]="{'border-danger':UserName.invalid,'border-2':UserName.invalid}" name="UserName" ngModel #UserName="ngModel" class="form-control" required>
+               </dd>
+               <dt class="form-check-label">Password</dt>
+               <dd>
+                   <input type="password" name="password" [ngClass]="{'border-danger':password.invalid}" ngModel #password="ngModel" class="form-control" required>
+               </dd>
+            </dl>
+            <div class="mt-2 d-grid">
+                <button class="btn btn-success rounded rounded-2">Login</button>
+            </div>
+       </form>
+    </div>
+</div>

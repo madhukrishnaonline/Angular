@@ -1,0 +1,36 @@
+<div class="container-fluid"> 
+    <dl class="m-5 w-25">
+        <dt>Background-color</dt>
+        <dd>
+            <select class="form-select" (change)="ApplyEffects()" [(ngModel)]="bg">
+                <option value="green">green</option>
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="yellow">yellow</option>
+            </select>
+        </dd>
+        <dt>text-color</dt>
+        <dd>
+            <select class="form-select" (change)="ApplyEffects()" [(ngModel)]="color">
+                <option value="green">green</option>
+                <option value="red">red</option>
+                <option value="blue">blue</option>
+                <option value="yellow">yellow</option>
+            </select>
+        </dd>
+        <dt>Padding</dt>
+        <dd class=" ">
+           1px <input type="range" (change)="ApplyEffects()" [(ngModel)]="padding" value="1" min="1" max="50"> 50px
+        </dd>
+        <dt>Radius</dt>
+        <dd class=" ">
+           1px <input type="range" (change)="ApplyEffects()" [(ngModel)]="radius" value="1" min="1" max="50"> 50px
+        </dd>
+    </dl>
+    <div class="m-5">
+        <button class="btn btn-primary">Apply</button>
+    </div>
+    <div class="d-flex justify-content-center align-content-center">
+        <h1 [ngStyle]="styleObj">Welcome to Angular</h1>
+    </div>
+</div>

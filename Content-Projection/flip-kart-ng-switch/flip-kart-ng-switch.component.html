@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <h3 class="text-success text-center mb-2">Product Details</h3>
+   <div class="row mt-5">
+       <div class="col-2 ms-4">
+          <div class="btn-group-vertical">
+              <button (click)="ViewClick('BasicDetails')" class="btn btn-success mt-2">Basic Details</button>
+              <button (click)="ViewClick('Preview')" class="btn btn-success mt-2">Preview</button>
+              <button (click)="ViewClick('Offers')" class="btn btn-success mt-2">Offers</button>
+          </div>
+          <div class="mt-5">
+             <select [(ngModel)]="ViewName" class="form-select">
+                <option value="BasicDetails">Basic Details</option>
+                <option value="Preview">Preview</option>
+                <option value="Offers">Offers</option>
+             </select>
+          </div>
+       </div>
+       <div class="col-7">
+          <div [ngSwitch]="ViewName">
+             <div *ngSwitchCase="'BasicDetails'">
+                 <h4>APPLE 2022 MacBook AIR M2 - (8 GB/256 GB SSD/Mac OS Monterey) MLY33HN/A  (13.6 Inch, Midnight, 1.24 Kg)</h4>
+                 <div class="BasicDetails">
+                    <span class="bg-success text-white p-1 me-3">4.6 <span class="bi bi-star-fill text-white"></span></span>
+                    <span class="text-secondary">209 Ratings & 21 Reviews</span>
+                    <span class="ms-4">
+                        <img src="../../../../assets/flipkart_asured.png"  width="100px" height="22px">
+                    </span>
+                    <div>
+                        <span class="text-success">Extra ₹11990 off</span>
+                        <div>
+                            <h1>₹1,07,910</h1>
+                            <span><del>₹1,19,900</del></span><span class="text-success ms-3">10% off</span> 
+                            <!-- <button data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Price details
+                            Maximum Retail Price
+                            (incl. of all taxes)
+                            ₹ 119900.00
+                            Selling Price
+                            ₹ 119900.00
+                            Special Price
+                            ₹ 107910.00">
+                                <span class="bi bi-exclamation-circle text-success ms-2"></span>
+                            </button> -->
+                        </div>
+                    </div>
+                 </div>
+             </div>
+             <div *ngSwitchCase="'Preview'">
+                 <div class="Preview" style="cursor: pointer;">
+                     <img src="../../../../assets/mac-view-n-1.png" width="500px" title="APPLE 2022 MacBook AIR M2" height="400px">
+                 </div>
+             </div>
+             <div *ngSwitchCase="'Offers'">
+                 <div class="Offers">
+                     <ul class="list-unstyled">
+                        <h3>Available Offers</h3>
+                        <li>
+                            <span class="bi bi-tag-fill text-success"></span>
+                            <b>Bank Offer10%</b> off on Kotak Credit Card EMI Transactions, up to ₹1,500, on orders of ₹5,000 and aboveT&C
+                        </li>
+                        <li>
+                            <span class="bi bi-tag-fill text-success"></span>
+                            <b>Bank Offer5%  </b>Cashback on Flipkart Axis Bank CardT&C
+                        </li>
+                        <li>
+                            <span class="bi bi-tag-fill text-success"></span>
+                            <b>Extra ₹2,000</b> Off on Bikes & Scooters on purchase of ₹30,000 or moreT&C
+                        </li>
+                        <li>
+                            <span class="bi bi-tag-fill text-success"></span>
+                            <b>Partner Offer</b> Purchase now & get 1 surprise cashback coupon in FutureKnow More
+                        </li>
+                     </ul>
+                 </div>
+             </div>
+          </div>
+       </div>
+   </div>
+</div>

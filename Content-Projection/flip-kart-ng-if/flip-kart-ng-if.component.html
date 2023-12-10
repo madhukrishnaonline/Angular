@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-2 mt-5">
+            <nav class="nav ms-2">
+                <div (mouseover)="ViewChanged('view1')">
+                    <img src="../../../../assets/mac-view-1.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view2')">
+                    <img src="../../../../assets/mac-view-2.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view3')">
+                    <img src="../../../../assets/mac-view-3.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view4')">
+                    <img src="../../../../assets/mac-view-4.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view5')">
+                    <img src="../../../../assets/mac-view-5.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view6')">
+                    <img src="../../../../assets/mac-view-6.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view7')">
+                    <img src="../../../../assets/mac-view-7.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view8')">
+                    <img src="../../../../assets/mac-view-8.png" width="70px" height="70px">
+                </div>
+                <div (mouseover)="ViewChanged('view9')">
+                    <img src="../../../../assets/mac-view-9.png" width="70px" height="70px">
+                </div>
+            </nav>
+        </div>
+        <div class="col-3 mt-5">
+            <div *ngIf="true; then thenBlock"></div>
+            <div class="ngContent">
+                <ng-template #view1>
+                    <img src="../../../../assets/mac-view-1.png" width="350px" height="400px">
+                </ng-template>
+                <ng-template #view2>
+                    <img src="../../../../assets/mac-view-2.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view3>
+                    <img src="../../../../assets/mac-view-3.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view4>
+                    <img src="../../../../assets/mac-view-4.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view5>
+                    <img src="../../../../assets/mac-view-5.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view6>
+                    <img src="../../../../assets/mac-view-6.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view7>
+                    <img src="../../../../assets/mac-view-7.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view8>
+                    <img src="../../../../assets/mac-view-8.png" width="300px" height="500px">
+                </ng-template>
+                <ng-template #view9>
+                    <img src="../../../../assets/mac-view-9.png" width="300px" height="500px">
+                </ng-template>
+            </div>
+        </div>
+        <div class="col-7 ms-4 mt-5">
+             <div class="title mb-3">
+                <h5>APPLE 2023 Macbook Air M2 - (8 GB/512 GB SSD/macOS Ventura) MQKT3HN/A  (15.3 Inch, Silver, 1.51 Kg)</h5>
+             </div>
+             <div class="rating">
+                <span class="bg-success text-white p-1 border rounded rounded-2">4.6 <span class="bi bi-star-fill text-white"></span></span><span class="ms-2">9 Ratings & 2 Reviews</span>
+                <span class="ms-3">
+                    <img src="../../../../assets/flipkart_asured.png" width="100px" height="30px">
+                </span>
+             </div>
+             <div class="price mt-3">
+                <h1><span class="bi bi-currency-rupee"></span>1,54,999</h1>
+             </div>
+        </div>
+    </div>
+</div>

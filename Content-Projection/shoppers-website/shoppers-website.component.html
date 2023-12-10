@@ -1,0 +1,133 @@
+<div class="container-fluid">
+    <div class="mt-2">
+        <header>
+            <div class="row mt-4">
+                <div class="col-1">
+
+                </div>
+                <div class="col-3 brand">
+                    <h1>Shopper.</h1>
+                </div>
+                <div class="col-4">
+                    <button class="btn">Home</button>
+                    <button class="btn">Catalog</button>
+                    <button class="btn">Shop</button>
+                    <button class="btn">Pages</button>
+                    <button class="btn">Blogs</button>
+                    <button class="btn">Docs</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn">
+                        <span class="bi bi-search"></span>
+                    </button>
+                    <button class="btn">
+                        <span class="bi bi-heart"></span>
+                    </button>
+                    <button class="btn">
+                        <span class="bi bi-person"></span>
+                    </button>
+                    <button (click)="ShowCartItems()" class="btn position-relative">
+                        <span class="bi bi-cart4"><span
+                                class="badge bg-danger rounded rounded-circle position-absolute">{{CartItemsCount}}</span></span>
+                    </button>
+                </div>
+                <div class="col-1">
+
+                </div>
+            </div>
+            <div class="mb-2">
+                <h4 class="p-2 m-2 text-center bg-dark text-white">⚡️ HAPPY HOLIDAY DEALS ON EVERYTHING ⚡️</h4>
+            </div>
+        </header>
+        <section class="mt-5">
+            <div class="row">
+                <div class="col-3">
+                    <nav>
+                        <div>
+                            <h5>Select a Category</h5>
+                            <select (change)="ProductChanged(Category.value)" ngModel #Category="ngModel"
+                                class="form-select">
+                                <option *ngFor="let category of Categories" [value]="category">
+                                    {{category | uppercase}}
+                                </option>
+                            </select>
+                        </div>
+                        <!-- <div class="" style="margin-top: 100px;">
+                        <div *ngFor="let category of Categories" class="form-switch">
+                            <input type="checkbox" [checked]="" [value]="category" class="form-check-input"> {{category | uppercase}} 
+                        </div>
+                    </div> -->
+                        <div class="mt-2 overflow-auto" *ngIf="isCartVisible" style="height: 650px;">
+                            <h4 class="text-center">Cart Items</h4>
+                            <div *ngFor="let cartItem of CartItems; let i = index" class="card m-2 p-2"
+                                style="width: 350px;">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="text-center">Title</h5>
+                                        <div class="card-header" style="height: 130px;">
+                                            <h6>{{cartItem.title}}</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="text-center">Preview</h5>
+                                        <div class="card-body">
+                                            <img [src]="cartItem.image" width="100%" height="120px">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="border border-bottom"></span>
+                                <div class="row mt-2">
+                                    <div class="col">
+                                        <h6 class="text-center text-capitalize">Price</h6>
+                                    </div>
+                                    <div class="col price">
+                                        <h6><span class="bi bi-currency-dollar"></span> {{cartItem.price}}</h6>
+                                    </div>
+                                    <div class="col">
+                                        <button (click)="RemoveClick(i)" class="btn btn-lg" style="margin-top: -15px;">
+                                            <span class="bi bi-trash-fill text-danger"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="border border-bottom"></span>
+                                <div class="row mt-2">
+                                    <div class="col-4">
+                                        <h6 class="text-center text-capitalize text-danger">Total</h6>
+                                    </div>
+                                    <div class="col-4">
+                                        <span class="bi bi-currency-dollar"></span> {{cartItem.price+ProductPrice}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-9 overflow-auto" style="height: 600px;">
+                    <main class="d-flex flex-wrap">
+                        <div *ngFor="let product of Products" class="card p-3 m-2" style="width: 250px;">
+                            <div class="card-img-top text-center">
+                                <a [href]="product.image" target="_blank">
+                                    <img [src]="product.image" width="100px" height="100px">
+                                </a>
+                            </div>
+                            <div class="card-header" style="height: 110px;">
+                                <h6 class="text-center">{{product.title}}</h6>
+                            </div>
+                            <div class="card-body">
+                                <h5><span class="bi bi-currency-dollar"></span> {{product.price}}</h5>
+                                <h6><span class="bi bi-star-fill text-warning"></span> {{product.rating.rate}}
+                                    [{{product.rating.count}}]</h6>
+                            </div>
+                            <div class="card-footer">
+                                <button (click)="AddToCartItems(product.id)" class="btn btn-danger w-100">
+                                    <span class="bi bi-cart4"></span>
+                                    Add To Cart
+                                </button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
