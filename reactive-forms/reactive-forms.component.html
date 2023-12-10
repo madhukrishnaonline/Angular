@@ -1,0 +1,35 @@
+<div class="container-fluid d-flex justify-content-center align-content-center">
+    <form action="" [formGroup]="frmRegister" (submit)="SubmitClick()">
+        <dl>
+            <h1>Reactive Forms</h1>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" name="name" required formControlName="Name">
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" name="password" formControlName="Password" required pattern="[A-Z]{6,15}">
+            </dd>
+            <div class="Child-Form border p-1" formGroupName="frmRegister2">
+                <dt>Email</dt>
+                <dd>
+                    <input type="email" name="email" required formControlName="Email">
+                </dd>
+                <dt>PAN</dt>
+                <dd>
+                    <input type="text" name="pan" required formControlName="PAN">
+                </dd>
+                <div class="d-grid">
+                    <button (click)="SaveDetails()" type="button">Save</button>
+                </div>
+            </div>
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" name="mobile" formControlName="Mobile" required pattern="\+91\d{10}">
+            </dd>
+            <div>
+                <button>Submit</button>
+            </div>
+        </dl>
+    </form>
+</div>
