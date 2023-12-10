@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <form #frmRegister="ngForm" [ngClass]="{'valid-style':frmRegister.valid, 'invalid-style':frmRegister.invalid}"
+        (submit)="SubmitClick(frmRegister.value)">
+        <h1>User Register</h1>
+        <dl>
+            <dt>User Name</dt>
+            <dd>
+                <input type="text" name="UserName" ngModel #UserName="ngModel" required minlength="4" maxlength="10">
+            </dd>
+            <dt>Age</dt>
+            <dd>
+                <input type="number" name="Age" ngModel #Age="ngModel" required min="23" max="45">
+            </dd>
+        </dl>
+        <div>
+            <button [disabled]="frmRegister.invalid">Register</button>
+            <button type="button" *ngIf="frmRegister.dirty && frmRegister.valid">Save Draft</button>
+        </div>
+    </form>
+    <hr>
+    <div>
+        <h1>User Details</h1>
+        <dl>
+            <dt>User Name</dt>
+            <dd>{{UserName.value}}</dd>
+            <dt>Age</dt>
+            <dd>{{Age.value}}</dd>
+        </dl>
+    </div>
+    <hr>
+    <div>
+        <h4>Pristine --{{frmRegister.pristine}}</h4>
+        <h4>Dirty --{{frmRegister.dirty}}</h4>
+        <h4>Valid --{{frmRegister.valid}}</h4>
+        <h4>invalid --{{frmRegister.invalid}}</h4>
+        <h4>Submitted --{{frmRegister.submitted}}</h4>
+    </div>
+</div>
