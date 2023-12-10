@@ -1,0 +1,61 @@
+<div class="container-fluid mt-5"> 
+   <div class="row">
+       <div class="col-3">
+        <h2>Enter Product Details</h2>
+        <dl>
+            <dt>Product Name</dt>
+            <dd>
+              <input type="text" [(ngModel)]="Product.Name" class="form-control">
+            </dd>
+            <dt>Price</dt>
+            <dd>
+              <input type="text" [(ngModel)]="Product.Price" class="form-control">
+            </dd>
+            <dt>Qty</dt>
+            <dd>
+              <input type="text" [(ngModel)]="Product.Qty" class="form-control">
+            </dd>
+            <dt>Stock</dt>
+            <dd class="form-switch">
+              <input type="checkbox" [(ngModel)]="Product.Stock" class="form-check-input">
+            </dd>
+            <dt>ShippedTo</dt>
+            <dd>
+              <select [(ngModel)]="Product.ShippedTo" class="form-select">
+                  <option>Hyd</option>
+                  <option>Delhi</option>
+                  <option>Mumbai</option>
+              </select>
+            </dd>
+            <!-- <dt>Rating</dt>
+            <dd>
+              <input type="text" [(ngModel)]="Product.Rating.Rate" placeholder="Rate"><br>
+              <input type="text" [(ngModel)]="Product.Rating.Count" placeholder="Count">
+            </dd> -->
+         </dl>
+         <div class="d-grid">
+            <button class="btn btn-primary" (click)="RegisterClick()">Register</button>
+         </div>
+       </div>
+       <div class="col-9">
+        <h2>Product Details</h2>
+        <dl>
+            <dt>Product Name</dt>
+            <dd>{{UpdatedProduct.Name}}</dd>
+            <dt>Price</dt>
+            <dd>{{UpdatedProduct.Price}}</dd>
+            <dt>Qty</dt>
+            <dd>{{UpdatedProduct.Qty}}</dd>
+            <dt>Stock</dt>
+            <dd>{{(UpdatedProduct.Stock==true)?"Available":"Out Of Stock"}}</dd>
+            <dt>ShippedTo</dt>
+            <dd>{{UpdatedProduct.ShippedTo}}</dd>
+            <!-- <dt>Rating</dt>
+            <dd>
+              [{{Product.Rate}}]
+              [{{Product.Count}}]
+            </dd> -->
+        </dl>
+     </div>
+   </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <dl class="mt-5 w-25">
+        <dt class="form-label">UserName</dt>
+        <dd>
+          <input type="text" class="form-control" value="{{UserName}}">
+          <span>Hello! {{UserName}}</span>
+        </dd>
+        <dt class="form-label">Stock</dt>
+        <dd class="form-check">
+            <input type="checkbox" class="form-check-input" [checked]="Stock"> {{(Stock==true)?"Available":"Out of Stock"}}
+            <span>{{Stock}}</span>
+        </dd>
+        <dt class="form-label">Table</dt>
+        <dd>
+            <table border="2" [width]="tWidth" [attr.height]="tHeight">
+                <tr>
+                    <td>{{UserName}}</td>
+                </tr>
+            </table>
+        </dd>
+    </dl>
+</div>

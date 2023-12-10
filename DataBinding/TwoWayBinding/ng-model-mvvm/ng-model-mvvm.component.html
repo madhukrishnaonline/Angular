@@ -1,0 +1,58 @@
+<div class="container-fluid mt-5"> 
+    <div class="row">
+        <div class="col-3">
+         <h2>Enter Product Details</h2>
+         <dl>
+             <dt>Product Name</dt>
+             <dd>
+               <input type="text" ngModel #Name="ngModel" class="form-control">
+             </dd>
+             <dt>Price</dt>
+             <dd>
+               <input type="text" ngModel #Price="ngModel"  class="form-control">
+             </dd>
+             <dt>Qty</dt>
+             <dd>
+               <input type="text" ngModel #Qty="ngModel" class="form-control">
+             </dd>
+             <dt>Stock</dt>
+             <dd class="form-switch">
+               <input type="checkbox" ngModel #Stock="ngModel" class="form-check-input">
+             </dd>
+             <dt>ShippedTo</dt>
+             <dd>
+               <select ngModel #ShippedTo="ngModel" class="form-select">
+                   <option>Hyd</option>
+                   <option>Delhi</option>
+                   <option>Mumbai</option>
+               </select>
+             </dd>
+             <!-- <dt>Rating</dt>
+             <dd>
+               <input type="text" [(ngModel)]="Product.Rating.Rate" placeholder="Rate"><br>
+               <input type="text" [(ngModel)]="Product.Rating.Count" placeholder="Count">
+             </dd> -->
+          </dl>
+        </div>
+        <div class="col-9">
+         <h2>Product Details</h2>
+         <dl>
+             <dt>Product Name</dt>
+             <dd><span class="bi bi-tag-fill"></span> {{Name.value}}</dd>
+             <dt>Price</dt>
+             <dd><span class="bi bi-currency-rupee"></span> {{Price.value}}</dd>
+             <dt>Qty</dt>
+             <dd>{{Qty.value}}</dd>
+             <dt>Stock</dt>
+             <dd><span class=""></span> {{(Stock.value==true)?"Available":"Out of Stock"}}</dd>
+             <dt>ShippedTo</dt>
+             <dd>{{ShippedTo.value}}</dd>
+             <!-- <dt>Rating</dt>
+             <dd>
+               [{{Product.Rate}}]
+               [{{Product.Count}}]
+             </dd> -->
+         </dl>
+      </div>
+    </div>
+ </div>
