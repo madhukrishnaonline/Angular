@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="mt-5">
+        <h1 class="text-center">Normal Loading</h1>
+        <div class="border border-danger shadow p-3 d-flex flex-wrap overflow-auto" style="height: 300px;">
+             <div *ngFor="let item of Products" class="card p-2 m-2 border-secondary shadow" style="width: 250px;">
+                 <div class="card-img-top text-center">
+                     <img [src]="item.image" width="150" height="150">
+                 </div>
+                 <div class="card-header" style="height: 80px;">
+                     {{item.title}}
+                 </div>
+             </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h1 class="text-center">Lazy Loading</h1>
+        <cdk-virtual-scroll-viewport itemSize="100" id="lazy" class=" overflow-auto" style="height: 300px;">
+           <div class="border border-danger shadow p-3 d-flex flex-wrap">
+                <div *cdkVirtualFor="let item of Products" class="card p-2 m-2 border-secondary shadow" style="width: 250px;">
+                    <div class="card-img-top text-center">
+                        <img [src]="item.image" width="150" height="150">
+                    </div>
+                    <div class="card-header" style="height: 80px;">
+                        {{item.title}}
+                    </div>
+            </div>
+           </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
+</div>
