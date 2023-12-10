@@ -1,0 +1,13 @@
+.container-fluid
+{
+    background-image: url('/assets/netflixBack.jpg');
+    height: 750px;
+    background-size: cover;
+}
+.shade
+{
+    background-color: rgba(0,0,0,0.4);
+    height: 750px;
+    margin-left: -11px;
+    margin-right: -11px;
+}

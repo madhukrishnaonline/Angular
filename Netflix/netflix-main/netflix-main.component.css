@@ -1,0 +1,12 @@
+.d-flex{
+    height: 400px;
+}
+h1
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+h4{
+    display: flex;
+    justify-content: center;
+}

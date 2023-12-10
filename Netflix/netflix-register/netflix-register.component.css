@@ -1,0 +1,19 @@
+.form-control
+{
+    opacity: 0.6;
+    background-color: rgba(0,0,0,0.9);
+}
+.form-control+label
+{
+    opacity: 0.6;
+    color: white;
+}
+/* .form-control::placeholder
+{
+   background-color: rgba(0,0,0,0.6);
+    opacity: 0.6;
+} */
+#register
+{
+    margin-top: -130px;
+}

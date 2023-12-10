@@ -1,0 +1,12 @@
+.text-danger
+{
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.d-flex
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
