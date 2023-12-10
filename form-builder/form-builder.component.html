@@ -1,0 +1,48 @@
+<div class="container-fluid d-flex justify-content-center align-content-center">
+    <form action="" [formGroup]="frmRegister" (submit)="SubmitClick()">
+        <dl>
+            <h1>Form Builder - Reactive Forms</h1>
+            <dt>Photos</dt><button type="button" class="btn btn-link" (click)="AddMore()">Add More</button>
+            <dd class="mb-2" *ngFor="let photo of Photos.controls; let i=index let f=first let l=last">
+                <input type="file" formControlName="i"><span>{{i}}</span>
+                <button *ngIf="!f" (click)="RemoveFile(i)" type="button" class="btn btn-link">
+                    <span class="text-danger bi bi-trash"></span>
+                </button>
+            </dd>
+            <dd class="text-danger" *ngIf="Photos.invalid">
+                <div *ngIf="Photos.errors?.['required']">File Required</div>
+            </dd>
+            <dt>Name</dt>
+            <dd>
+                <input type="text" name="name" required formControlName="Name">
+            </dd>
+            <dt>Password</dt>
+            <dd>
+                <input type="password" name="password" formControlName="Password">
+            </dd>
+            <dd class="text-danger" *ngIf="Password?.invalid && Password?.touched">
+                <div>Password Required</div>
+            </dd>
+            <div class="Child-Form border p-1" formGroupName="frmRegister2">
+                <dt>Email</dt>
+                <dd>
+                    <input type="email" name="email" formControlName="Email">
+                </dd>
+                <dt>PAN</dt>
+                <dd>
+                    <input type="text" name="pan" formControlName="PAN">
+                </dd>
+                <div class="d-grid">
+                    <button type="button">Save</button>
+                </div>
+            </div>
+            <dt>Mobile</dt>
+            <dd>
+                <input type="text" name="mobile" formControlName="Mobile">
+            </dd>
+            <div>
+                <button>Submit</button>
+            </div>
+        </dl>
+    </form>
+</div>
