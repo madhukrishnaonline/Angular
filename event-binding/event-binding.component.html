@@ -1,0 +1,26 @@
+<div class="container-fluid" (mousemove)="MoveObject($event)"> 
+    <form (submit)="SubmitInfo()" class="d-flex justify-content-center align-content-center mt-5" style="height: 500px;">
+        <dl style="width: 500px;">
+            <dt>UserName</dt>
+            <dd class="input-group">
+              <input (blur)="VerifyMsg($event)" [ngClass]="{'text-danger':isInvalid,'text-success':true}" (keyup)="VerifyUser($event)" type="text" name="UserName" required>
+              <span class="input-group-text" [ngClass]="{'bi bi-check-circle-fill':true,'bi bi-x-circle':isInvalid,'text-danger':isInvalid,'text-success':true}"></span>
+            </dd>
+            <dd [ngClass]="{'text-danger':isInvalid,'text-success':true}">{{VerifyName}}</dd>
+            <dt>Password</dt>
+            <dd>
+               <input (focus)="PwdFocus()" (blur)="PwdBlur()" (keypress)="VerifyPassword($event)" type="password" required name="password">
+            </dd>
+            <dd class="text-warning" *ngIf="isPwdInvalid">
+                <span class="bi bi-exclamation-triangle-fill"></span> CAPS ON
+            </dd>
+            <dd>{{VerifyPwd}}</dd>
+            <div class="mt-3">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+         </dl>
+    </form>
+    <div style="height: 500px;">
+       <img [src]="Img_Src" [ngStyle]="StyleObj" height="50" width="50">
+    </div>
+</div>
